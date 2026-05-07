@@ -48,6 +48,35 @@ function formatDateTime(value) {
   }).format(date);
 }
 
+function getLastViewedSortValue(listing) {
+  if (!listing.lastViewedAt) {
+    return Number.NEGATIVE_INFINITY;
+  }
+
+  const timestamp = new Date(listing.lastViewedAt).getTime();
+
+  return Number.isFinite(timestamp) ? timestamp : Number.NEGATIVE_INFINITY;
+}
+
+function compareLastViewedListings(left, right) {
+  const leftHasView = Boolean(left.lastViewedAt);
+  const rightHasView = Boolean(right.lastViewedAt);
+
+  if (!leftHasView && !rightHasView) {
+    return 0;
+  }
+
+  if (!leftHasView) {
+    return -1;
+  }
+
+  if (!rightHasView) {
+    return 1;
+  }
+
+  return getLastViewedSortValue(left) - getLastViewedSortValue(right);
+}
+
 async function getHiddenListingIds() {
   const result = await chrome.storage.local.get(HIDDEN_STORAGE_KEY);
 
@@ -686,7 +715,9 @@ function renderScanResults(panel, results) {
   const list = document.createElement("div");
   list.className = "mobile-de-filter-scan-list";
 
-  const listingsToShow = newListings.length > 0 ? newListings : allListings;
+  const listingsToShow = (newListings.length > 0 ? newListings : allListings)
+    .slice()
+    .sort(compareLastViewedListings);
 
   for (const listing of listingsToShow) {
     const item = document.createElement("a");
