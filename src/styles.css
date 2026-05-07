@@ -84,7 +84,7 @@
   position: fixed;
   right: 16px;
   bottom: 16px;
-  z-index: 999999;
+  z-index: 2147483647;
   display: flex;
   gap: 8px;
 }
@@ -110,7 +110,7 @@
   position: fixed;
   right: 16px;
   bottom: 64px;
-  z-index: 999999;
+  z-index: 2147483647;
   width: min(620px, calc(100vw - 32px));
   max-height: 85vh;
   overflow: auto;
