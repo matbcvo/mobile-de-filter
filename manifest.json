@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "mobile.de Filter",
+  "version": "0.1.0",
+  "description": "Hide, track, and manage mobile.de listings in search results.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.mobile.de/*",
+        "https://suchen.mobile.de/*"
+      ],
+      "js": ["src/content.js"],
+      "css": ["src/styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

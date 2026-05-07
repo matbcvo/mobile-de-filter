@@ -1,0 +1,52 @@
+.mobile-de-filter-hide-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 9999;
+  padding: 6px 10px;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  background: Canvas;
+  color: CanvasText;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.mobile-de-filter-hide-button:hover {
+  opacity: 0.85;
+}
+
+.mobile-de-filter-collapsed-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border: 1px dashed currentColor;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+.mobile-de-filter-collapsed-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mobile-de-filter-unhide-button {
+  flex-shrink: 0;
+  padding: 6px 10px;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.mobile-de-filter-unhide-button:hover {
+  opacity: 0.8;
+}
