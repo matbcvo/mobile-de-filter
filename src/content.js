@@ -1,5 +1,6 @@
 const HIDDEN_STORAGE_KEY = "hiddenMobileDeListingIds";
 const SEEN_STORAGE_KEY = "seenMobileDeListingIds";
+const LAST_VIEWED_STORAGE_KEY = "lastViewedMobileDeListingById";
 
 const PROCESSED_ATTRIBUTE = "data-mobile-de-filter-processed";
 const COLLAPSED_ATTRIBUTE = "data-mobile-de-filter-collapsed";
@@ -30,6 +31,23 @@ function getListingIdFromUrl() {
   }
 }
 
+function formatDateTime(value) {
+  if (!value) {
+    return "Never viewed";
+  }
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return "Never viewed";
+  }
+
+  return new Intl.DateTimeFormat(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(date);
+}
+
 async function getHiddenListingIds() {
   const result = await chrome.storage.local.get(HIDDEN_STORAGE_KEY);
 
@@ -51,6 +69,18 @@ async function getSeenListingIds() {
 async function saveSeenListingIds(seenListingIds) {
   await chrome.storage.local.set({
     [SEEN_STORAGE_KEY]: Array.from(seenListingIds),
+  });
+}
+
+async function getLastViewedListingMap() {
+  const result = await chrome.storage.local.get(LAST_VIEWED_STORAGE_KEY);
+
+  return result[LAST_VIEWED_STORAGE_KEY] || {};
+}
+
+async function saveLastViewedListingMap(lastViewedListingMap) {
+  await chrome.storage.local.set({
+    [LAST_VIEWED_STORAGE_KEY]: lastViewedListingMap,
   });
 }
 
@@ -532,6 +562,7 @@ async function scanAllPages() {
 
   const hiddenListingIds = await getHiddenListingIds();
   const seenListingIds = await getSeenListingIds();
+  const lastViewedListingMap = await getLastViewedListingMap();
 
   const pageParamName = detectPageParamName();
   const lastPageNumber = getLastPageNumberFromDocument(document, pageParamName);
@@ -574,6 +605,7 @@ async function scanAllPages() {
           pageNumber,
           isHidden: hiddenListingIds.has(listing.id),
           isSeen: seenListingIds.has(listing.id),
+          lastViewedAt: lastViewedListingMap[listing.id] || null,
         });
       }
     } catch (error) {
@@ -675,6 +707,7 @@ function renderScanResults(panel, results) {
         <strong>${escapeHtml(listing.title)}</strong>
         <span>${escapeHtml(listing.price)}</span>
         <small>Page ${listing.pageNumber} — ${escapeHtml(listing.details)}</small>
+        <small>Last viewed: ${escapeHtml(formatDateTime(listing.lastViewedAt))}</small>
       </div>
     `;
 
@@ -829,6 +862,10 @@ async function processDetailView() {
   const listingId = getListingIdFromUrl();
 
   if (!listingId) return;
+
+  const lastViewedListingMap = await getLastViewedListingMap();
+  lastViewedListingMap[listingId] = new Date().toISOString();
+  await saveLastViewedListingMap(lastViewedListingMap);
 
   const hiddenListingIds = await getHiddenListingIds();
 
