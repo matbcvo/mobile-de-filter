@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "mobile.de filter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hide, track, and manage mobile.de listings in search results.",
   "permissions": ["storage"],
   "content_scripts": [
