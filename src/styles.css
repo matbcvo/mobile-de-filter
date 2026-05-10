@@ -4,10 +4,10 @@
   right: 8px;
   z-index: 9999;
   padding: 6px 10px;
-  border: 1px solid currentColor;
+  border: 2px solid #DDDDDD;
   border-radius: 6px;
-  background: Canvas;
-  color: CanvasText;
+  background: #F5F7FA;
+  color: #1A1A1A;
   font-size: 13px;
   cursor: pointer;
 }
@@ -20,8 +20,8 @@
   margin-left: 0;
   padding: 6px 10px;
   border-radius: 6px;
-  background: Canvas;
-  color: CanvasText;
+  background: #F5F7FA;
+  color: #1A1A1A;
   font-size: 13px;
   cursor: pointer;
 }
@@ -36,10 +36,10 @@
   right: 70px;
   z-index: 9999;
   padding: 6px 10px;
-  border: 1px solid currentColor;
+  border: 2px solid #DDDDDD;
   border-radius: 999px;
-  background: Canvas;
-  color: CanvasText;
+  background: #F5F7FA;
+  color: #1A1A1A;
   font-size: 12px;
   font-weight: 700;
   pointer-events: none;
@@ -51,10 +51,10 @@
   justify-content: space-between;
   gap: 16px;
   padding: 12px 16px;
-  border: 1px dashed currentColor;
+  border: 2px dashed #DDDDDD;
   border-radius: 8px;
-  background: transparent;
-  color: inherit;
+  background: #F5F7FA;
+  color: #1A1A1A;
   font-size: 14px;
   opacity: 0.75;
 }
@@ -68,10 +68,10 @@
 .mobile-de-filter-unhide-button {
   flex-shrink: 0;
   padding: 6px 10px;
-  border: 1px solid currentColor;
+  border: 2px solid #DDDDDD;
   border-radius: 6px;
-  background: transparent;
-  color: inherit;
+  background: #F5F7FA;
+  color: #1A1A1A;
   font-size: 13px;
   cursor: pointer;
 }
@@ -92,10 +92,10 @@
 .mobile-de-filter-toolbar button,
 .mobile-de-filter-panel button {
   padding: 7px 11px;
-  border: 1px solid currentColor;
+  border: 2px solid #DDDDDD;
   border-radius: 6px;
-  background: Canvas;
-  color: CanvasText;
+  background: #F5F7FA;
+  color: #1A1A1A;
   font-size: 13px;
   cursor: pointer;
 }
@@ -113,14 +113,49 @@
   z-index: 2147483647;
   width: min(620px, calc(100vw - 32px));
   max-height: 85vh;
-  overflow: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   padding: 14px;
-  border: 1px solid currentColor;
+  border: 2px solid #DDDDDD;
   border-radius: 10px;
-  background: Canvas;
-  color: CanvasText;
+  background: #F5F7FA;
+  color: #1A1A1A;
   box-shadow: 0 8px 30px rgb(0 0 0 / 35%);
   font-size: 14px;
+}
+
+/* Scrollbar — Firefox */
+.mobile-de-filter-panel {
+  scrollbar-width: thin;
+  scrollbar-color: #BBBBBB #F5F7FA;
+}
+
+/* Scrollbar — Chrome/Edge/Safari */
+.mobile-de-filter-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mobile-de-filter-panel::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.mobile-de-filter-panel::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.mobile-de-filter-panel:hover::-webkit-scrollbar-track {
+  background: #F5F7FA;
+}
+
+.mobile-de-filter-panel:hover::-webkit-scrollbar-thumb {
+  background: #BBBBBB;
+}
+
+.mobile-de-filter-panel::-webkit-scrollbar-thumb:hover {
+  background: #999999;
 }
 
 .mobile-de-filter-panel-title {
@@ -143,6 +178,27 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.mobile-de-filter-scan-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mobile-de-filter-scan-list::-webkit-scrollbar-track {
+  background: #F0F0F0;
+  border-radius: 999px;
+}
+
+.mobile-de-filter-scan-list::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border-radius: 999px;
+}
+
+.mobile-de-filter-scan-list::-webkit-scrollbar-thumb:hover {
+  background: #AAAAAA;
 }
 
 .mobile-de-filter-scan-item {
@@ -150,9 +206,10 @@
   grid-template-columns: 92px 1fr;
   gap: 10px;
   padding: 10px;
-  border: 1px solid currentColor;
+  border: 2px solid #DDDDDD;
   border-radius: 8px;
-  color: inherit;
+  background: #FFFFFF;
+  color: #1A1A1A;
   text-decoration: none;
   opacity: 0.9;
 }
@@ -170,7 +227,7 @@
 }
 
 .mobile-de-filter-scan-image-placeholder {
-  border: 1px dashed currentColor;
+  border: 2px dashed #DDDDDD;
   opacity: 0.35;
 }
 
@@ -221,4 +278,21 @@
     width: 72px;
     height: 54px;
   }
+}
+
+/* Button hover effect */
+.mobile-de-filter-toolbar button,
+.mobile-de-filter-panel button,
+.mobile-de-filter-hide-button,
+.mobile-de-filter-hide-button-inline,
+.mobile-de-filter-unhide-button {
+  transition: background 0.15s ease;
+}
+
+.mobile-de-filter-toolbar button:hover,
+.mobile-de-filter-panel button:hover,
+.mobile-de-filter-hide-button:hover,
+.mobile-de-filter-hide-button-inline:hover,
+.mobile-de-filter-unhide-button:hover {
+  background: #DCDCDC;
 }

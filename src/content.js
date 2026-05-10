@@ -669,7 +669,7 @@ function renderScanResults(panel, results) {
 
   const title = document.createElement("div");
   title.className = "mobile-de-filter-panel-title";
-  title.textContent = "mobile.de Filter scan results";
+  title.textContent = "mobile.de filter scan results";
 
   const summary = document.createElement("div");
   summary.className = "mobile-de-filter-panel-summary";
