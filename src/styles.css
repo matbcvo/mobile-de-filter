@@ -1,283 +1,283 @@
 .mobile-de-filter-hide-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  z-index: 9999;
-  padding: 6px 10px;
-  border: 2px solid #DDDDDD;
-  border-radius: 6px;
-  background: #F5F7FA;
-  color: #1A1A1A;
-  font-size: 13px;
-  cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 9999;
+    padding: 6px 10px;
+    border: 2px solid #DDDDDD;
+    border-radius: 6px;
+    background: #F5F7FA;
+    color: #1A1A1A;
+    font-size: 13px;
+    cursor: pointer;
 }
 
 .mobile-de-filter-hide-button-inline {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  z-index: 10000;
-  margin-left: 0;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: #F5F7FA;
-  color: #1A1A1A;
-  font-size: 13px;
-  cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10000;
+    margin-left: 0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #F5F7FA;
+    color: #1A1A1A;
+    font-size: 13px;
+    cursor: pointer;
 }
 
 .mobile-de-filter-hide-button:hover {
-  opacity: 0.85;
+    opacity: 0.85;
 }
 
 .mobile-de-filter-new-badge {
-  position: absolute;
-  top: 8px;
-  right: 70px;
-  z-index: 9999;
-  padding: 6px 10px;
-  border: 2px solid #DDDDDD;
-  border-radius: 999px;
-  background: #F5F7FA;
-  color: #1A1A1A;
-  font-size: 12px;
-  font-weight: 700;
-  pointer-events: none;
+    position: absolute;
+    top: 8px;
+    right: 70px;
+    z-index: 9999;
+    padding: 6px 10px;
+    border: 2px solid #DDDDDD;
+    border-radius: 999px;
+    background: #F5F7FA;
+    color: #1A1A1A;
+    font-size: 12px;
+    font-weight: 700;
+    pointer-events: none;
 }
 
 .mobile-de-filter-collapsed-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px 16px;
-  border: 2px dashed #DDDDDD;
-  border-radius: 8px;
-  background: #F5F7FA;
-  color: #1A1A1A;
-  font-size: 14px;
-  opacity: 0.75;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 16px;
+    border: 2px dashed currentColor;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    font-size: 14px;
+    opacity: 0.75;
 }
 
 .mobile-de-filter-collapsed-text {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .mobile-de-filter-unhide-button {
-  flex-shrink: 0;
-  padding: 6px 10px;
-  border: 2px solid #DDDDDD;
-  border-radius: 6px;
-  background: #F5F7FA;
-  color: #1A1A1A;
-  font-size: 13px;
-  cursor: pointer;
+    flex-shrink: 0;
+    padding: 6px 10px;
+    border: 2px solid #DDDDDD;
+    border-radius: 6px;
+    background: #F5F7FA;
+    color: #1A1A1A;
+    font-size: 13px;
+    cursor: pointer;
 }
 
 .mobile-de-filter-unhide-button:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
 
 .mobile-de-filter-toolbar {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 2147483647;
-  display: flex;
-  gap: 8px;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 2147483647;
+    display: flex;
+    gap: 8px;
 }
 
 .mobile-de-filter-toolbar button,
 .mobile-de-filter-panel button {
-  padding: 7px 11px;
-  border: 2px solid #DDDDDD;
-  border-radius: 6px;
-  background: #F5F7FA;
-  color: #1A1A1A;
-  font-size: 13px;
-  cursor: pointer;
+    padding: 7px 11px;
+    border: 2px solid #DDDDDD;
+    border-radius: 6px;
+    background: #F5F7FA;
+    color: #1A1A1A;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .mobile-de-filter-toolbar button:disabled,
 .mobile-de-filter-panel button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .mobile-de-filter-panel {
-  position: fixed;
-  right: 16px;
-  bottom: 64px;
-  z-index: 2147483647;
-  width: min(620px, calc(100vw - 32px));
-  max-height: 85vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 14px;
-  border: 2px solid #DDDDDD;
-  border-radius: 10px;
-  background: #F5F7FA;
-  color: #1A1A1A;
-  box-shadow: 0 8px 30px rgb(0 0 0 / 35%);
-  font-size: 14px;
+    position: fixed;
+    right: 16px;
+    bottom: 64px;
+    z-index: 2147483647;
+    width: min(620px, calc(100vw - 32px));
+    max-height: 85vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    border: 2px solid #DDDDDD;
+    border-radius: 10px;
+    background: #F5F7FA;
+    color: #1A1A1A;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 35%);
+    font-size: 15px;
 }
 
 /* Scrollbar — Firefox */
 .mobile-de-filter-panel {
-  scrollbar-width: thin;
-  scrollbar-color: #BBBBBB #F5F7FA;
+    scrollbar-width: thin;
+    scrollbar-color: #BBBBBB #F5F7FA;
 }
 
 /* Scrollbar — Chrome/Edge/Safari */
 .mobile-de-filter-panel::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
 
 .mobile-de-filter-panel::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 10px;
+    background: transparent;
+    border-radius: 10px;
 }
 
 .mobile-de-filter-panel::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 10px;
+    background: transparent;
+    border-radius: 10px;
 }
 
 .mobile-de-filter-panel:hover::-webkit-scrollbar-track {
-  background: #F5F7FA;
+    background: #F5F7FA;
 }
 
 .mobile-de-filter-panel:hover::-webkit-scrollbar-thumb {
-  background: #BBBBBB;
+    background: #BBBBBB;
 }
 
 .mobile-de-filter-panel::-webkit-scrollbar-thumb:hover {
-  background: #999999;
+    background: #999999;
 }
 
 .mobile-de-filter-panel-title {
-  font-weight: 700;
-  margin-bottom: 8px;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
 .mobile-de-filter-panel-summary {
-  margin-bottom: 12px;
-  opacity: 0.85;
+    margin-bottom: 12px;
+    opacity: 0.85;
 }
 
 .mobile-de-filter-panel-actions {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
 .mobile-de-filter-scan-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-  overflow-y: auto;
-  padding-right: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 4px;
 }
 
 .mobile-de-filter-scan-list::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
 
 .mobile-de-filter-scan-list::-webkit-scrollbar-track {
-  background: #F0F0F0;
-  border-radius: 999px;
+    background: #F0F0F0;
+    border-radius: 999px;
 }
 
 .mobile-de-filter-scan-list::-webkit-scrollbar-thumb {
-  background: #CCCCCC;
-  border-radius: 999px;
+    background: #CCCCCC;
+    border-radius: 999px;
 }
 
 .mobile-de-filter-scan-list::-webkit-scrollbar-thumb:hover {
-  background: #AAAAAA;
+    background: #AAAAAA;
 }
 
 .mobile-de-filter-scan-item {
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  gap: 10px;
-  padding: 10px;
-  border: 2px solid #DDDDDD;
-  border-radius: 8px;
-  background: #FFFFFF;
-  color: #1A1A1A;
-  text-decoration: none;
-  opacity: 0.9;
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid #DDDDDD;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    text-decoration: none;
+    opacity: 0.9;
 }
 
 .mobile-de-filter-scan-item:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .mobile-de-filter-scan-image {
-  width: 92px;
-  height: 69px;
-  object-fit: cover;
-  border-radius: 6px;
-  background: transparent;
+    width: 92px;
+    height: 69px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: transparent;
 }
 
 .mobile-de-filter-scan-image-placeholder {
-  border: 2px dashed #DDDDDD;
-  opacity: 0.35;
+    border: 2px dashed #DDDDDD;
+    opacity: 0.35;
 }
 
 .mobile-de-filter-scan-content {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
 }
 
 .mobile-de-filter-scan-content strong,
 .mobile-de-filter-scan-content span,
 .mobile-de-filter-scan-content small {
-  overflow: hidden;
-  text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .mobile-de-filter-scan-content small {
-  opacity: 0.75;
+    opacity: 0.75;
 }
 
 .mobile-de-filter-empty {
-  opacity: 0.75;
+    opacity: 0.75;
 }
 
 @media (max-width: 520px) {
-  .mobile-de-filter-toolbar {
-    right: 8px;
-    bottom: 8px;
-    left: 8px;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
+    .mobile-de-filter-toolbar {
+        right: 8px;
+        bottom: 8px;
+        left: 8px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
 
-  .mobile-de-filter-panel {
-    right: 8px;
-    left: 8px;
-    bottom: 58px;
-    width: auto;
-    max-height: 85vh;
-  }
+    .mobile-de-filter-panel {
+        right: 8px;
+        left: 8px;
+        bottom: 58px;
+        width: auto;
+        max-height: 85vh;
+    }
 
-  .mobile-de-filter-scan-item {
-    grid-template-columns: 72px 1fr;
-  }
+    .mobile-de-filter-scan-item {
+        grid-template-columns: 72px 1fr;
+    }
 
-  .mobile-de-filter-scan-image {
-    width: 72px;
-    height: 54px;
-  }
+    .mobile-de-filter-scan-image {
+        width: 72px;
+        height: 54px;
+    }
 }
 
 /* Button hover effect */
@@ -286,7 +286,7 @@
 .mobile-de-filter-hide-button,
 .mobile-de-filter-hide-button-inline,
 .mobile-de-filter-unhide-button {
-  transition: background 0.15s ease;
+    transition: background 0.15s ease;
 }
 
 .mobile-de-filter-toolbar button:hover,
@@ -294,5 +294,5 @@
 .mobile-de-filter-hide-button:hover,
 .mobile-de-filter-hide-button-inline:hover,
 .mobile-de-filter-unhide-button:hover {
-  background: #DCDCDC;
+    background: #DCDCDC;
 }
